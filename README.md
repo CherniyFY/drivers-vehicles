@@ -1,5 +1,36 @@
 # DriversVehicles
 
+A simple Angular SPA based on Angular Material.
+
+1. Displays an overview in which all the driver data is represented, except for the id.
+2. Possibilities to create, edit and delete drivers.
+
+Uses json-server mock API and NgRx state management.
+
+Start JSON Server `json-server --watch db.json`
+Start SPA in dev mode `npm run start`
+
+Also:
+
+- Displays in the overview the license plate number of the vehicle associated to each driver.
+- Allows the change of vehicle associated to each driver.
+- Applies validation to the form.
+- Customizes the color palette of the Angular Material theme.
+
+What else can be done:
+
+- Table pagination
+- Backend table interaction (filtering, sorting, pagination through API)
+- Better UI (e.g. columns' order) after feedback from end-users
+- In case of big number of vehicles we can replace select with autocomplete for better searchability (but to see other options we will need to clear the field first)
+- Better responsiveness
+- Delete duplicate vehicles if needed (although it is a 100% backend task)
+- Save empty vehicleId (initial json didn't contain null vehicleId property in some drivers' objects) and use PATCH instead of PUT
+- Refresh drivers' list on every server interaction if we need the most actual data
+- Split driver form into two dialogs with the same form in case Add and Edit scenarios become too different
+
+# Angular
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
 ## Development server

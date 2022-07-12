@@ -1,0 +1,45 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$my-palette: (
+  50: #e5f5e4,
+  100: #c1e5bd,
+  200: #97d492,
+  300: #6ac465,
+  400: #43b742,
+  500: #00aa13,
+  600: #009b06,
+  700: #008a00,
+  800: #007900,
+  900: #005a00,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$my-primary: mat.define-palette($my-palette);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: mat.$indigo-palette,
+    ),
+  )
+);
+
+@include mat.all-component-themes($my-theme);
+
+body {
+  background-color: mat.get-color-from-palette($my-palette, 50);
+}
